@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 1 Challenge</title>
+
+    <link
+      rel="stylesheet"
+      href="./css/materialize.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <h1>Challenge 1</h1>
+
+    <div class="row s12">
+      <div class="input-field col s11">
+        <input placeholder="Type here" id="inputSearch" type="text" class="validate">
+        <label for="search">Search</label>
+      </div>
+      <div class="input-field col s1">
+        <a class="waves-effect waves-light btn" id="btnSearch">Search</a>
+      </div>
+    </div>
+
+    <div class="users-container">
+      <div class="user-list">
+        <h3><span id="labelCountUsers"></span></h5>
+        <div id="tabUsers"></div>
+      </div>
+      <div class="static-list">
+        <h3>Statistics</h3>
+        <ul>
+          <li><span class="bold">Women:</span> <span id="countWomen"></span></li>
+          <li><span class="bold">Men:</span> <span id="countMen"></span></li>
+          <li><span class="bold">Age Sum:</span> <span id="sumAge"></span></li>
+          <li><span class="bold">Age Average:</span> <span id="avgAge"></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="./js/materialize.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

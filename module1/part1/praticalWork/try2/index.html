@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabalho Prático - Módulo 1</title>
+
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script defer src="js/scripts.js"></script>
+  </head>
+  <body>
+    <h1>Números por extenso</h1>
+    <label id="labelRangeNumero">
+      Escolhe um número entre 0 e 999: <br />
+      <input type="range" min="0" max="999" id="rangeNumero" list="tickmarks" />
+      <datalist id="tickmarks">
+        <option value="0"></option>
+        <option value="100"></option>
+        <option value="200"></option>
+        <option value="300"></option>
+        <option value="400"></option>
+        <option value="500"></option>
+        <option value="600"></option>
+        <option value="700"></option>
+        <option value="800"></option>
+        <option value="900"></option>
+        <option value="999"></option>
+      </datalist>
+    </label>
+    <br />
+    <label id="idLabelNumeroAtual">
+      Número escolhido:
+      <input
+        type="text"
+        id="numeroAtual"
+        placeholder="Número escolhido"
+        disabled="disabled"
+        readonly="readonly"
+      />
+    </label>
+    <br />
+    <label id="idLabelnumeroPorExtenso">
+      Número por extenso:
+      <input
+        type="text"
+        id="numeroPorExtenso"
+        placeholder="Número por extenso"
+        disabled="disabled"
+        readonly="readonly"
+      />
+    </label>
+  </body>
+</html>

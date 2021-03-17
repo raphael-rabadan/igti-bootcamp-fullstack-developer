@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabalho Prático - Módulo 1</title>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./css/materialize.css"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <h1>Números por extenso</h1>
+
+    <label id="labelRangeNumero">
+      Escolhe um número entre 0 e 999
+      <input type="range" min="0" max="999" id="rangeNumero" list="tickmarks" />
+    </label>
+
+    <label id="idLabelNumeroAtual">
+      Número escolhido
+      <input
+        type="text"
+        id="numeroAtual"
+        placeholder="Número escolhido"
+        disabled="disabled"
+        readonly="readonly"
+      />
+    </label>
+
+    <label id="idLabelnumeroPorExtenso">
+      Número por extenso:
+      <input
+        type="text"
+        id="numeroPorExtenso"
+        placeholder="Número por extenso"
+        disabled="disabled"
+        readonly="readonly"
+      />
+    </label>
+
+    <script defer type="text/javascript" src="./js/materialize.min.js"></script>
+    <script defer type="text/javascript" src="./js/scripts.js"></script>
+  </body>
+</html>

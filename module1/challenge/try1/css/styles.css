@@ -1,0 +1,35 @@
+body {
+  padding: 10px;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.users-container {
+  display: flex;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 300%;
+}
+
+.user-list,
+.static-list {
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-right: 10px;
+  width: 50%;
+}
+
+.bold {
+  font-weight: bold;
+}
