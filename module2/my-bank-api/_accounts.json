@@ -1,0 +1,25 @@
+{
+    "nextId": 9,
+    "accounts": [
+        {
+            "id": 2,
+            "name": "Guilerme Assis",
+            "balance": 200
+        },
+        {
+            "id": 3,
+            "name": "Lara Lacerda Rabadan",
+            "balance": 199898
+        },
+        {
+            "id": 4,
+            "name": "João Pedro Mariano",
+            "balance": 123.45
+        },
+        {
+            "id": 8,
+            "name": "Raphael Rabadan",
+            "balance": 142232.15
+        }
+    ]
+}

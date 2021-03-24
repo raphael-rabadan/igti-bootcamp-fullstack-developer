@@ -1,0 +1,19 @@
+{
+    "name": "class06_static_files",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "express": "^4.17.1",
+        "winston": "^3.3.3"
+    },
+    "devDependencies": {},
+    "scripts": {
+      "start":"nodemon",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module"
+}
