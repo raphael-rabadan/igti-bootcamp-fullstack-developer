@@ -9,5 +9,5 @@ app.use(cors())
 app.use("/grade", gradeRouter)
 
 app.listen(3010, async () => {
-    logger.info("API Challenge Module 02 - part 1 Server started!")
+    logger.info("API Module 02 Challenge Server started!")
 })
