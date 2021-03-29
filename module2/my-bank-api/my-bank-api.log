@@ -74,3 +74,4 @@
 2021-03-23 23:11:28 [my-bank-api] info: API Started!
 2021-03-23 23:12:36 [my-bank-api] info: GET /account
 2021-03-23 23:13:23 [my-bank-api] info: POST /account - {"id":4,"name":"Testando 123","balance":9999}
+2021-03-29 14:31:09 [my-bank-api] info: API Started!
