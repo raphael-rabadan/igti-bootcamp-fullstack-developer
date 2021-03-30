@@ -1,14 +1,8 @@
-import express, { json } from "express"
-import cors from "cors"
 import { promises as fs } from "fs"
-import { parse } from "path"
-
-global.GRADES_FILE = "./file/grades.json"
 
 const { readFile, writeFile } = fs
-const router = express.Router()
 
-router.post("/", cors(), async (req, res, next) => {
+const create = async (req, res, next) => {
     try {
         let grade = req.body
 
@@ -32,9 +26,9 @@ router.post("/", cors(), async (req, res, next) => {
     } catch (err) {
         next(err)
     }
-})
+}
 
-router.put("/", cors(), async (req, res, next) => {
+const update = async (req, res, next) => {
     try {
         let grade = req.body
 
@@ -66,9 +60,43 @@ router.put("/", cors(), async (req, res, next) => {
         console.log(err)
         next(err)
     }
-})
+}
 
-router.delete("/:id", cors(), async (req, res, next) => {
+const updateValue = async (req, res, next) => {
+    try {
+        let grade = req.body
+
+        if (grade.value === undefined || grade.value === null || !grade.id) {
+            throw new Error("id e value are mandatory.")
+        }
+
+        const data = JSON.parse(await readFile(GRADES_FILE))
+
+        const index = data.grades.findIndex(
+            (cur) => parseInt(grade.id) === cur.id
+        )
+
+        if (index === -1) {
+            throw new Error("Register not found.")
+        }
+
+        const { value } = grade
+        data.grades[index].value = value
+
+        await writeFile(GRADES_FILE, JSON.stringify(data, null, 2))
+
+        res.send(data.grades[index])
+
+        logger.info(
+            `PATCH /grade/value - ${JSON.stringify(data.grades[index])}`
+        )
+    } catch (err) {
+        console.log(err)
+        next(err)
+    }
+}
+
+const exclude = async (req, res, next) => {
     try {
         const idDelete = req.params.id
 
@@ -84,37 +112,9 @@ router.delete("/:id", cors(), async (req, res, next) => {
     } catch (err) {
         next(err)
     }
-})
+}
 
-router.get("/total", cors(), async (req, res, next) => {
-    try {
-        let grade = req.body
-
-        const data = JSON.parse(await readFile(GRADES_FILE))
-
-        const { student, subject } = grade
-
-        let total = 0
-        data.grades.forEach((cur) => {
-            if (
-                cur.student.toLocaleLowerCase() ===
-                    grade.student.toLocaleLowerCase() &&
-                cur.subject.toLocaleLowerCase() ===
-                    grade.subject.toLocaleLowerCase()
-            ) {
-                total += parseInt(cur.value)
-            }
-        })
-
-        res.send(total.toString())
-
-        logger.info(`GET /grade/total - ${total}`)
-    } catch (err) {
-        next(err)
-    }
-})
-
-router.get("/average", cors(), async (req, res, next) => {
+const average = async (req, res, next) => {
     try {
         let grade = req.body
 
@@ -152,9 +152,37 @@ router.get("/average", cors(), async (req, res, next) => {
     } catch (err) {
         next(err)
     }
-})
+}
 
-router.get("/bests", cors(), async (req, res, next) => {
+const total = async (req, res, next) => {
+    try {
+        let grade = req.body
+
+        const data = JSON.parse(await readFile(GRADES_FILE))
+
+        const { student, subject } = grade
+
+        let total = 0
+        data.grades.forEach((cur) => {
+            if (
+                cur.student.toLocaleLowerCase() ===
+                    grade.student.toLocaleLowerCase() &&
+                cur.subject.toLocaleLowerCase() ===
+                    grade.subject.toLocaleLowerCase()
+            ) {
+                total += parseInt(cur.value)
+            }
+        })
+
+        res.send(total.toString())
+
+        logger.info(`GET /grade/total - ${total}`)
+    } catch (err) {
+        next(err)
+    }
+}
+
+const bests = async (req, res, next) => {
     try {
         let grade = req.body
 
@@ -180,9 +208,9 @@ router.get("/bests", cors(), async (req, res, next) => {
         console.log(err)
         next(err)
     }
-})
+}
 
-router.get("/:id", cors(), async (req, res, next) => {
+const searchById = async (req, res, next) => {
     try {
         console.log(req.url)
         const id = req.params.id
@@ -196,11 +224,21 @@ router.get("/:id", cors(), async (req, res, next) => {
     } catch (err) {
         next(err)
     }
-})
+}
 
-router.use((err, req, res, next) => {
+const error = (err, req, res, next) => {
     logger.error(` ${req.method} ${req.baseUrl} - ${err.message}`)
     res.status(400).send({ error: err.message })
-})
+}
 
-export default router
+export default {
+    create,
+    update,
+    updateValue,
+    exclude,
+    average,
+    total,
+    bests,
+    searchById,
+    error,
+}

@@ -1,7 +1,9 @@
 import express from "express"
 import cors from "cors"
 import logger from "./utils/logger.js"
-import gradeRouter from "./routes/grades.js"
+import gradeRouter from "./routes/grade.js"
+
+global.GRADES_FILE = "./file/grades.json"
 
 const app = express()
 app.use(express.json())
