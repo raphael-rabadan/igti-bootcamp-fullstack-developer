@@ -1,0 +1,71 @@
+{
+  "nextId": 12,
+  "lancamentos": [
+    {
+      "id": 1,
+      "valor": 1200,
+      "categoria": "Salário",
+      "data": "31/03/2021"
+    },
+    {
+      "id": 2,
+      "valor": -1200,
+      "categoria": "Salário",
+      "data": "31/03/2021"
+    },
+    {
+      "id": 3,
+      "valor": -1200,
+      "categoria": "Salário",
+      "data": "31/03/2021"
+    },
+    {
+      "id": 4,
+      "valor": 1200,
+      "categoria": "Salário",
+      "data": "31/03/2021"
+    },
+    {
+      "id": 5,
+      "valor": 1200,
+      "categoria": "Salário",
+      "data": "31/03/2021"
+    },
+    {
+      "id": 6,
+      "valor": -1200,
+      "categoria": "Salário",
+      "data": "31/03/2021"
+    },
+    {
+      "id": 7,
+      "valor": -1200,
+      "categoria": "Salário",
+      "data": "31/03/2021"
+    },
+    {
+      "id": 8,
+      "valor": 1200,
+      "categoria": "Salário",
+      "data": "31/03/2021"
+    },
+    {
+      "id": 9,
+      "valor": 1200,
+      "categoria": "Salário",
+      "data": "31/03/2021"
+    },
+    {
+      "id": 10,
+      "valor": 1200,
+      "categoria": "Salário",
+      "data": "31/03/2021"
+    },
+    {
+      "id": 11,
+      "valor": 1200,
+      "categoria": "Salário",
+      "data": "31/03/2021"
+    }
+  ]
+}
