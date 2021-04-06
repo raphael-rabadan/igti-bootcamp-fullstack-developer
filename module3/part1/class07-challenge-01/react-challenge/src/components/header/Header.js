@@ -1,12 +1,10 @@
 import React, { Component } from "react"
-import { formatNumber } from "./../../helpers/formatNumber.js"
+import { formatNumber } from "../../helpers/formatNumber.js"
 
 export default class Header extends Component {
   constructor() {
     super()
-    // console.log(this.props.countries)
     this.state = {
-      countriesFiltered: [],
       totalPopulation: 0,
     }
   }
@@ -24,14 +22,14 @@ export default class Header extends Component {
   }
 
   calcultePopulation = () => {
-    const { countries } = this.props
-    return countries.reduce((acc, cur) => {
+    const { countriesFiltered } = this.props
+    return countriesFiltered.reduce((acc, cur) => {
       return (acc += cur.population)
     }, 0)
   }
 
   render() {
-    const { countries } = this.props
+    const { countriesFiltered } = this.props
 
     return (
       <div className="row">
@@ -41,8 +39,8 @@ export default class Header extends Component {
         </div>
         <div className="row">
           <div className="card-panel teal lighten-2 col s3">
-            Countries: <strong>{countries.length}</strong>
-            <br /> Total Population:
+            Countries: <strong>{countriesFiltered.length}</strong>
+            <br /> Population:
             <strong> {formatNumber(this.calcultePopulation())}</strong>
           </div>
         </div>
