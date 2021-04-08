@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import css from "./user.module.css"
 
 export default function User({user}) {
-    const { login, name, picture } = user
+    const { name, picture } = user
 
     return (
       <div className={css.flexRow}>
