@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react'
 
-import css from './country-item.module.css';
+import css from './country-item.module.css'
 
-export default class CountryItem extends Component {
-  render() {
-    const { id, flag, name } = this.props.item;
+export default function CountryItem({ item }) {
+  const { id, flag, name } = item
 
-    return (
-      <div className={css.countryItemContainer} id={id}>
-        <img className={css.flag} src={flag} alt={name} />
-        {name}
-      </div>
-    );
-  }
+  return (
+    <div className={css.countryItemContainer} id={id}>
+      <img className={css.flag} src={flag} alt={name} />
+      {name}
+    </div>
+  )
 }
