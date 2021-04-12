@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import css from './counter.module.css'
 import DecrementButton from './DecrementButton'
 import IncrementButton from './IncrementButton'

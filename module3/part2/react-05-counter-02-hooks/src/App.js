@@ -1,64 +1,43 @@
-import React, { Component, Fragment } from "react"
-import Band from "./components/Band"
-import Counter from "./components/Counter/Counter"
-import Counter2 from "./components/Counter/Counter2"
+import React, { Fragment, useState } from 'react'
+import Band from './components/Band'
+import Counter from './components/Counter/Counter'
+import Counter2 from './components/Counter/Counter2'
 
-export default class App extends Component {
-  constructor() {
-    super()
+export default function App() {
+  const [currentCounter, setCurrentCounter] = useState(3)
+  const [steps, setSteps] = useState(0)
 
-    this.state = {
-      currentCounter: 3,
-      steps: 0,
-    }
+  const handleCount = (clickType) => {
+    const counter = clickType === '+' ? currentCounter + 1 : currentCounter - 1
+    setCurrentCounter(counter)
+    setSteps(steps + 1)
   }
 
-  handleCount = (clickType) => {
-    const { currentCounter, steps } = this.state
-    this.setState(
-      {
-        currentCounter:
-          clickType === "+" ? currentCounter + 1 : currentCounter - 1,
-        steps: steps + 1,
-      },
-      () => {
-        const { currentCounter, steps } = this.state
-        console.log(
-          `state updated with steps ${steps} and currentCounter ${currentCounter}`
-        )
-      }
-    )
-  }
+  return (
+    <Fragment>
+      <h3>Band</h3>
+      <Band />
 
-  render() {
-    const { currentCounter, steps } = this.state
-
-    return (
-      <Fragment>
-        <h3>Band</h3>
-        <Band />
-
-        <h3>Counter</h3>
-        <Counter />
-        <Counter />
-        <Counter />
-        <h3>Counter 2</h3>
-        <Counter2
-          onCount={this.handleCount}
-          countValue={currentCounter}
-          currentStep={steps}
-        />
-        <Counter2
-          onCount={this.handleCount}
-          countValue={currentCounter}
-          currentStep={steps}
-        />
-        <Counter2
-          onCount={this.handleCount}
-          countValue={currentCounter}
-          currentStep={steps}
-        />
-      </Fragment>
-    )
-  }
+      <h3>Counter</h3>
+      <Counter />
+      <Counter />
+      <Counter />
+      <h3>Counter 2</h3>
+      <Counter2
+        onCount={handleCount}
+        countValue={currentCounter}
+        currentStep={steps}
+      />
+      <Counter2
+        onCount={handleCount}
+        countValue={currentCounter}
+        currentStep={steps}
+      />
+      <Counter2
+        onCount={handleCount}
+        countValue={currentCounter}
+        currentStep={steps}
+      />
+    </Fragment>
+  )
 }
