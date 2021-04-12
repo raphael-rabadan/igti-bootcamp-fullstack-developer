@@ -1,55 +1,41 @@
-import React, { Component } from "react"
-import Toggle from "./components/toggle/Toggle"
-import Users from "./components/users/Users"
+import React, { useEffect, useState } from 'react'
+import Toggle from './components/toggle/Toggle'
+import Users from './components/users/Users'
 
-export default class App extends Component {
-  constructor() {
-    super()
+export default function App() {
+  const [users, setUsers] = useState([])
+  const [showUsers, setShowUsers] = useState(false)
 
-    this.state = {
-      users: [],
-      showUsers: false,
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const res = await fetch(
+        'https://randomuser.me/api?seed=rush&nat=en&results=10'
+      )
+      const json = await res.json()
+      setUsers(json.results)
     }
-  }
-  async componentDidMount() {
-    const res = await fetch(
-      "https://randomuser.me/api?seed=rush&nat=en&results=10"
-    )
-    const json = await res.json()
 
-    this.setState(
-      {
-        users: json.results,
-      },
-      () => {
-        console.log("Users fetched")
-      }
-    )
+    fetchUsers()
+
+    return () => {
+      console.log('Users fetched')
+    }
+  }, [])
+
+  const handleShowUsers = (isChecked) => {
+    setShowUsers(isChecked)
   }
 
-  componentDidUpdate() {}
-
-  componentWillUnmount() {}
-
-  handleShowUsers = (isChecked) => {
-    this.setState({
-      showUsers: isChecked,
-    })
-  }
-
-  render() {
-    const { showUsers, users } = this.state
-    return (
-      <div>
-        <h3>React LifeCycle</h3>
-        <Toggle
-          description="Show users:"
-          enabled={showUsers}
-          onToggle={this.handleShowUsers}
-        />
-        <hr />
-        {showUsers ? <Users users={users} /> : "Turn on!"}
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h3>React LifeCycle</h3>
+      <Toggle
+        description='Show users:'
+        enabled={showUsers}
+        onToggle={handleShowUsers}
+      />
+      <hr />
+      {showUsers ? <Users users={users} /> : 'Turn on!'}
+    </div>
+  )
 }
