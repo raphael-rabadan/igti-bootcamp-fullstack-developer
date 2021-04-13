@@ -14,7 +14,7 @@ export default function App() {
       const grades = await api.getAllGrades()
       setAllGrades(grades)
     }
-    setTimeout(getGrades, 2000)
+    setTimeout(getGrades, 1000)
   }, [])
 
   const handleDelete = async (id) => {
@@ -35,8 +35,21 @@ export default function App() {
     setIsModalOpen(true)
   }
 
-  const handlePersistData = () => {
-    console.log('handlePersistData')
+  const handlePersistData = async (formData) => {
+    const { id, newValue } = formData
+    const newGrades = Object.assign([], allGrades)
+
+    const gradeToPersist = newGrades.find((grade) => grade.id === id)
+    gradeToPersist.value = newValue
+
+    if (gradeToPersist.isDeleted) {
+      gradeToPersist.isDeleted = false
+      await api.insertGrade(gradeToPersist)
+    } else {
+      await api.updateGrade(gradeToPersist)
+    }
+
+    setIsModalOpen(false)
   }
 
   const handleClose = () => {
