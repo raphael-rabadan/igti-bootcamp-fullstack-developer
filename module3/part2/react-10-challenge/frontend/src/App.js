@@ -65,7 +65,7 @@ export default function App() {
     sortedArray = sortedArray.sort((a, b) => a.year - b.year)
 
     setFilteredTasks(sortedArray)
-  }, [selectedYear, selectedMonth])
+  }, [selectedYear, selectedMonth, allTasks])
 
   const handleOnButtonClick = (data, type) => {
     if (type === 'month') {
@@ -76,7 +76,6 @@ export default function App() {
   }
 
   const handleTaskClicked = async (data) => {
-    console.log(data)
     const newFilteredTasks = filteredTasks.map((task) => {
       const { id, day, month, year, period, date, description, done } = task
       if (data.id === id) {
@@ -106,7 +105,7 @@ export default function App() {
 
   return (
     <div className='container'>
-      <h3 className='center'>React Todos</h3>
+      <h3 className='center'>React Tasks</h3>
       <ButtonContainer
         values={allYears}
         selected={selectedYear}
@@ -143,19 +142,19 @@ const styles = {
     fontSize: '1.2rem',
   },
   total: {
-    color: 'blue',
+    color: '#01579b',
     fontWeight: 'bold',
     fontSize: '1.2rem',
     marginRight: '30px',
   },
   done: {
-    color: 'green',
+    color: '#1b5e20',
     fontWeight: 'bold',
     fontSize: '1.2rem',
     marginRight: '30px',
   },
   todo: {
-    color: 'red',
+    color: '#c62828',
     fontWeight: 'bold',
     fontSize: '1.2rem',
     marginRight: '30px',

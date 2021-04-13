@@ -3,7 +3,7 @@ import React from 'react'
 export default function Task({ task, onTaskClick }) {
   let cssColor = task.done
     ? '#a5d6a7 green lighten-3'
-    : '#ffb74d orange lighten-2'
+    : '#ffab91 deep-orange lighten-3'
 
   const handleTaskClick = () => {
     onTaskClick(task)

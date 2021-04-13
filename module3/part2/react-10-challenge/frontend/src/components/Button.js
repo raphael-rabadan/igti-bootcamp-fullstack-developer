@@ -13,7 +13,7 @@ export default function Button({ value, onButtonClick, type, selected }) {
 
   return (
     <button
-      className='waves effect waves-lights btn dark-4'
+      className='waves effect waves-lights btn'
       style={cssSelector}
       onClick={handleOnButtonClick}
     >
@@ -24,15 +24,18 @@ export default function Button({ value, onButtonClick, type, selected }) {
 
 const styles = {
   month: {
-    backgroundColor: 'red',
-    margin: '5px',
+    backgroundColor: '#e57373',
+    margin: '7px',
+    width: '60px',
   },
   year: {
-    backgroundColor: 'blue',
-    margin: '5px',
+    backgroundColor: '#64b5f6',
+    margin: '7px',
+    width: '60px',
   },
   selected: {
-    backgroundColor: 'black',
-    margin: '5px',
+    backgroundColor: '#4e342e',
+    margin: '7px',
+    width: '60px',
   },
 }
