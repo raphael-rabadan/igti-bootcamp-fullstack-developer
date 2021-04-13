@@ -216,3 +216,156 @@
 2021-04-12T23:33:53.007Z [grades-control-api] info: DELETE /grade - " 14
 2021-04-12T23:33:53.678Z [grades-control-api] info: DELETE /grade - " 15
 2021-04-12T23:33:54.325Z [grades-control-api] info: DELETE /grade - " 16
+2021-04-12T23:33:58.788Z [grades-control-api] info: GET /grade
+2021-04-12T23:35:13.666Z [grades-control-api] info: GET /grade
+2021-04-12T23:36:55.490Z [grades-control-api] info: GET /grade
+2021-04-12T23:37:07.686Z [grades-control-api] info: GET /grade
+2021-04-12T23:38:57.110Z [grades-control-api] info: GET /grade
+2021-04-12T23:41:12.272Z [grades-control-api] info: GET /grade
+2021-04-12T23:41:49.366Z [grades-control-api] info: GET /grade
+2021-04-12T23:43:18.535Z [grades-control-api] info: GET /grade
+2021-04-12T23:43:41.071Z [grades-control-api] info: GET /grade
+2021-04-12T23:44:17.982Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:38.787Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:43.928Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:44.313Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:44.537Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:44.692Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:44.868Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:45.040Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:45.210Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:45.360Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:45.529Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:45.751Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:45.969Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:46.142Z [grades-control-api] info: GET /grade
+2021-04-12T23:49:46.358Z [grades-control-api] info: GET /grade
+2021-04-12T23:51:11.281Z [grades-control-api] info: GET /grade
+2021-04-12T23:51:14.730Z [grades-control-api] info: GET /grade
+2021-04-12T23:52:42.567Z [grades-control-api] info: GET /grade
+2021-04-12T23:52:51.647Z [grades-control-api] info: GET /grade
+2021-04-12T23:56:43.354Z [grades-control-api] info: GET /grade
+2021-04-12T23:56:46.608Z [grades-control-api] info: GET /grade
+2021-04-12T23:57:10.641Z [grades-control-api] info: GET /grade
+2021-04-12T23:58:19.642Z [grades-control-api] info: GET /grade
+2021-04-12T23:58:44.643Z [grades-control-api] info: GET /grade
+2021-04-12T23:59:00.647Z [grades-control-api] info: GET /grade
+2021-04-12T23:59:24.639Z [grades-control-api] info: GET /grade
+2021-04-12T23:59:39.302Z [grades-control-api] info: GET /grade
+2021-04-12T23:59:43.559Z [grades-control-api] info: GET /grade
+2021-04-13T00:00:52.440Z [grades-control-api] info: GET /grade
+2021-04-13T00:02:21.653Z [grades-control-api] info: GET /grade
+2021-04-13T00:02:53.418Z [grades-control-api] info: GET /grade
+2021-04-13T00:05:07.650Z [grades-control-api] info: GET /grade
+2021-04-13T00:06:04.644Z [grades-control-api] info: GET /grade
+2021-04-13T00:06:29.648Z [grades-control-api] info: GET /grade
+2021-04-13T00:06:40.651Z [grades-control-api] info: GET /grade
+2021-04-13T00:10:30.655Z [grades-control-api] info: GET /grade
+2021-04-13T00:10:34.642Z [grades-control-api] info: GET /grade
+2021-04-13T00:10:39.617Z [grades-control-api] info: GET /grade
+2021-04-13T00:11:25.642Z [grades-control-api] info: GET /grade
+2021-04-13T00:12:00.794Z [grades-control-api] info: GET /grade
+2021-04-13T00:14:35.641Z [grades-control-api] info: GET /grade
+2021-04-13T00:16:17.642Z [grades-control-api] info: GET /grade
+2021-04-13T00:17:33.653Z [grades-control-api] info: GET /grade
+2021-04-13T00:18:13.651Z [grades-control-api] info: GET /grade
+2021-04-13T00:18:24.642Z [grades-control-api] info: GET /grade
+2021-04-13T00:18:34.646Z [grades-control-api] info: GET /grade
+2021-04-13T00:19:18.647Z [grades-control-api] info: GET /grade
+2021-04-13T00:21:11.247Z [grades-control-api] info: GET /grade
+2021-04-13T00:21:45.268Z [grades-control-api] info: GET /grade
+2021-04-13T00:22:31.654Z [grades-control-api] info: GET /grade
+2021-04-13T00:23:18.649Z [grades-control-api] info: GET /grade
+2021-04-13T00:23:24.651Z [grades-control-api] info: GET /grade
+2021-04-13T00:24:17.644Z [grades-control-api] info: GET /grade
+2021-04-13T00:24:28.641Z [grades-control-api] info: GET /grade
+2021-04-13T00:24:54.639Z [grades-control-api] info: GET /grade
+2021-04-13T00:25:25.328Z [grades-control-api] info: GET /grade
+2021-04-13T00:26:37.308Z [grades-control-api] info: GET /grade
+2021-04-13T00:27:20.416Z [grades-control-api] info: GET /grade
+2021-04-13T00:28:58.643Z [grades-control-api] info: GET /grade
+2021-04-13T00:29:44.170Z [grades-control-api] info: GET /grade
+2021-04-13T00:29:53.379Z [grades-control-api] info: GET /grade
+2021-04-13T00:30:00.653Z [grades-control-api] info: GET /grade
+2021-04-13T00:30:14.725Z [grades-control-api] info: DELETE /grade - " 2
+2021-04-13T00:30:21.525Z [grades-control-api] info: GET /grade
+2021-04-13T00:31:09.958Z [grades-control-api] info: GET /grade
+2021-04-13T00:31:27.644Z [grades-control-api] info: GET /grade
+2021-04-13T00:33:11.475Z [grades-control-api] info: GET /grade
+2021-04-13T00:36:32.650Z [grades-control-api] info: GET /grade
+2021-04-13T00:36:45.512Z [grades-control-api] info: GET /grade
+2021-04-13T00:37:48.643Z [grades-control-api] info: GET /grade
+2021-04-13T00:38:08.652Z [grades-control-api] info: GET /grade
+2021-04-13T00:38:43.210Z [grades-control-api] info: GET /grade
+2021-04-13T00:39:25.000Z [grades-control-api] info: GET /grade
+2021-04-13T00:42:58.701Z [grades-control-api] info: GET /grade
+2021-04-13T00:44:27.648Z [grades-control-api] info: GET /grade
+2021-04-13T00:46:19.661Z [grades-control-api] info: GET /grade
+2021-04-13T00:46:29.642Z [grades-control-api] info: GET /grade
+2021-04-13T00:46:53.644Z [grades-control-api] info: GET /grade
+2021-04-13T00:47:27.638Z [grades-control-api] info: GET /grade
+2021-04-13T00:47:32.637Z [grades-control-api] info: GET /grade
+2021-04-13T00:47:53.653Z [grades-control-api] info: GET /grade
+2021-04-13T00:48:05.647Z [grades-control-api] info: GET /grade
+2021-04-13T00:48:16.640Z [grades-control-api] info: GET /grade
+2021-04-13T00:49:02.649Z [grades-control-api] info: GET /grade
+2021-04-13T00:49:19.788Z [grades-control-api] info: GET /grade
+2021-04-13T00:49:59.157Z [grades-control-api] info: API started!
+2021-04-13T00:49:59.160Z [grades-control-api] info: POST /grade - {"id":1,"student":"John Petrucci","subject":"01 - JavaScript","type":"Exercícios","value":3,"timestamp":"2021-04-13T00:49:59.160Z"}
+2021-04-13T00:49:59.161Z [grades-control-api] info: POST /grade - {"id":2,"student":"John Petrucci","subject":"02 - Node","type":"Exercícios","value":10,"timestamp":"2021-04-13T00:49:59.161Z"}
+2021-04-13T00:49:59.162Z [grades-control-api] info: POST /grade - {"id":3,"student":"John Petrucci","subject":"03 - React","type":"Exercícios","value":7,"timestamp":"2021-04-13T00:49:59.162Z"}
+2021-04-13T00:49:59.163Z [grades-control-api] info: POST /grade - {"id":4,"student":"John Petrucci","subject":"01 - JavaScript","type":"Trabalho Prático","value":29,"timestamp":"2021-04-13T00:49:59.162Z"}
+2021-04-13T00:49:59.164Z [grades-control-api] info: POST /grade - {"id":5,"student":"John Petrucci","subject":"02 - Node","type":"Trabalho Prático","value":4,"timestamp":"2021-04-13T00:49:59.163Z"}
+2021-04-13T00:49:59.164Z [grades-control-api] info: POST /grade - {"id":6,"student":"John Petrucci","subject":"03 - React","type":"Trabalho Prático","value":6,"timestamp":"2021-04-13T00:49:59.164Z"}
+2021-04-13T00:49:59.165Z [grades-control-api] info: POST /grade - {"id":7,"student":"John Petrucci","subject":"01 - JavaScript","type":"Desafio","value":49,"timestamp":"2021-04-13T00:49:59.164Z"}
+2021-04-13T00:49:59.165Z [grades-control-api] info: POST /grade - {"id":8,"student":"John Petrucci","subject":"02 - Node","type":"Desafio","value":47,"timestamp":"2021-04-13T00:49:59.165Z"}
+2021-04-13T00:49:59.166Z [grades-control-api] info: POST /grade - {"id":9,"student":"John Petrucci","subject":"03 - React","type":"Desafio","value":41,"timestamp":"2021-04-13T00:49:59.166Z"}
+2021-04-13T00:49:59.167Z [grades-control-api] info: POST /grade - {"id":10,"student":"Mike Portnoy","subject":"01 - JavaScript","type":"Exercícios","value":3,"timestamp":"2021-04-13T00:49:59.167Z"}
+2021-04-13T00:49:59.167Z [grades-control-api] info: POST /grade - {"id":11,"student":"Mike Portnoy","subject":"02 - Node","type":"Exercícios","value":7,"timestamp":"2021-04-13T00:49:59.167Z"}
+2021-04-13T00:49:59.168Z [grades-control-api] info: POST /grade - {"id":12,"student":"Mike Portnoy","subject":"03 - React","type":"Exercícios","value":3,"timestamp":"2021-04-13T00:49:59.168Z"}
+2021-04-13T00:49:59.169Z [grades-control-api] info: POST /grade - {"id":13,"student":"Mike Portnoy","subject":"01 - JavaScript","type":"Trabalho Prático","value":39,"timestamp":"2021-04-13T00:49:59.168Z"}
+2021-04-13T00:49:59.169Z [grades-control-api] info: POST /grade - {"id":14,"student":"Mike Portnoy","subject":"02 - Node","type":"Trabalho Prático","value":17,"timestamp":"2021-04-13T00:49:59.169Z"}
+2021-04-13T00:49:59.170Z [grades-control-api] info: POST /grade - {"id":15,"student":"Mike Portnoy","subject":"03 - React","type":"Trabalho Prático","value":21,"timestamp":"2021-04-13T00:49:59.169Z"}
+2021-04-13T00:49:59.170Z [grades-control-api] info: POST /grade - {"id":16,"student":"Mike Portnoy","subject":"01 - JavaScript","type":"Desafio","value":44,"timestamp":"2021-04-13T00:49:59.170Z"}
+2021-04-13T00:49:59.171Z [grades-control-api] info: POST /grade - {"id":17,"student":"Mike Portnoy","subject":"02 - Node","type":"Desafio","value":21,"timestamp":"2021-04-13T00:49:59.171Z"}
+2021-04-13T00:49:59.172Z [grades-control-api] info: POST /grade - {"id":18,"student":"Mike Portnoy","subject":"03 - React","type":"Desafio","value":12,"timestamp":"2021-04-13T00:49:59.171Z"}
+2021-04-13T00:49:59.172Z [grades-control-api] info: POST /grade - {"id":19,"student":"Neal Morse","subject":"01 - JavaScript","type":"Exercícios","value":3,"timestamp":"2021-04-13T00:49:59.172Z"}
+2021-04-13T00:49:59.173Z [grades-control-api] info: POST /grade - {"id":20,"student":"Neal Morse","subject":"02 - Node","type":"Exercícios","value":7,"timestamp":"2021-04-13T00:49:59.173Z"}
+2021-04-13T00:49:59.176Z [grades-control-api] info: POST /grade - {"id":21,"student":"Neal Morse","subject":"03 - React","type":"Exercícios","value":7,"timestamp":"2021-04-13T00:49:59.175Z"}
+2021-04-13T00:49:59.176Z [grades-control-api] info: POST /grade - {"id":22,"student":"Neal Morse","subject":"01 - JavaScript","type":"Trabalho Prático","value":19,"timestamp":"2021-04-13T00:49:59.176Z"}
+2021-04-13T00:49:59.177Z [grades-control-api] info: POST /grade - {"id":23,"student":"Neal Morse","subject":"02 - Node","type":"Trabalho Prático","value":9,"timestamp":"2021-04-13T00:49:59.177Z"}
+2021-04-13T00:49:59.178Z [grades-control-api] info: POST /grade - {"id":24,"student":"Neal Morse","subject":"03 - React","type":"Trabalho Prático","value":38,"timestamp":"2021-04-13T00:49:59.178Z"}
+2021-04-13T00:49:59.179Z [grades-control-api] info: POST /grade - {"id":25,"student":"Neal Morse","subject":"01 - JavaScript","type":"Desafio","value":28,"timestamp":"2021-04-13T00:49:59.179Z"}
+2021-04-13T00:49:59.179Z [grades-control-api] info: POST /grade - {"id":26,"student":"Neal Morse","subject":"02 - Node","type":"Desafio","value":12,"timestamp":"2021-04-13T00:49:59.179Z"}
+2021-04-13T00:49:59.180Z [grades-control-api] info: POST /grade - {"id":27,"student":"Neal Morse","subject":"03 - React","type":"Desafio","value":41,"timestamp":"2021-04-13T00:49:59.180Z"}
+2021-04-13T00:50:02.238Z [grades-control-api] info: GET /grade
+2021-04-13T00:50:48.645Z [grades-control-api] info: GET /grade
+2021-04-13T00:51:52.643Z [grades-control-api] info: GET /grade
+2021-04-13T00:51:59.659Z [grades-control-api] info: GET /grade
+2021-04-13T00:55:26.648Z [grades-control-api] info: GET /grade
+2021-04-13T00:55:38.653Z [grades-control-api] info: GET /grade
+2021-04-13T00:55:59.646Z [grades-control-api] info: GET /grade
+2021-04-13T00:57:20.505Z [grades-control-api] info: GET /grade
+2021-04-13T00:59:46.645Z [grades-control-api] info: GET /grade
+2021-04-13T01:00:11.643Z [grades-control-api] info: GET /grade
+2021-04-13T01:00:29.726Z [grades-control-api] info: GET /grade
+2021-04-13T01:00:30.756Z [grades-control-api] info: DELETE /grade - " 7
+2021-04-13T01:00:38.318Z [grades-control-api] info: GET /grade
+2021-04-13T01:00:55.028Z [grades-control-api] info: GET /grade
+2021-04-13T01:00:56.159Z [grades-control-api] info: DELETE /grade - " 4
+2021-04-13T01:01:00.477Z [grades-control-api] info: GET /grade
+2021-04-13T01:02:01.644Z [grades-control-api] info: GET /grade
+2021-04-13T01:03:13.641Z [grades-control-api] info: GET /grade
+2021-04-13T01:03:16.652Z [grades-control-api] info: GET /grade
+2021-04-13T01:03:19.977Z [grades-control-api] info: DELETE /grade - " 1
+2021-04-13T01:03:28.741Z [grades-control-api] info: DELETE /grade - " 5
+2021-04-13T01:03:29.580Z [grades-control-api] info: DELETE /grade - " 8
+2021-04-13T01:03:31.298Z [grades-control-api] info: DELETE /grade - " 3
+2021-04-13T01:03:31.700Z [grades-control-api] info: DELETE /grade - " 9
+2021-04-13T01:08:33.611Z [grades-control-api] info: GET /grade
+2021-04-13T01:10:28.850Z [grades-control-api] info: GET /grade
+2021-04-13T01:13:40.651Z [grades-control-api] info: GET /grade
+2021-04-13T01:14:22.646Z [grades-control-api] info: GET /grade
+2021-04-13T01:14:32.647Z [grades-control-api] info: GET /grade
+2021-04-13T01:15:02.648Z [grades-control-api] info: GET /grade
+2021-04-13T01:15:17.644Z [grades-control-api] info: GET /grade

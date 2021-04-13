@@ -22,7 +22,7 @@ const GRADE_VALIDATION = [
   },
 ]
 
-async function geAllGrades() {
+async function getAllGrades() {
   const res = await axios.get(API_URL)
 
   const grades = res.data.grades.map((grade) => {
@@ -112,15 +112,15 @@ async function updateGrade(grade) {
   return res.data
 }
 
-async function deleteGrade(grade) {
-  const res = await axios.delete(`${API_URL}/${grade.id}`)
+async function deleteGrade(id) {
+  const res = await axios.delete(`${API_URL}/${id}`)
   return res.data
 }
 
 async function getValidationFromGradeType(gradeType) {
-  const gradeValidation = GRADE_VALIDATION.find(
-    (item) => item.gradeType === gradeType
-  )
+  const gradeValidation = GRADE_VALIDATION.find((item) => {
+    return item.gradeType === gradeType
+  })
 
   return {
     minValue: gradeValidation.minValue,
@@ -129,7 +129,7 @@ async function getValidationFromGradeType(gradeType) {
 }
 
 export {
-  geAllGrades,
+  getAllGrades,
   insertGrade,
   updateGrade,
   deleteGrade,
