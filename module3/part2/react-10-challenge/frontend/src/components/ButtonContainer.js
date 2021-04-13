@@ -12,7 +12,7 @@ export default function ButtonContainer({
   }
 
   return (
-    <div className='container center'>
+    <div className='center'>
       {values.map((value) => {
         return (
           <Button

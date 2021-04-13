@@ -1,4 +1,5 @@
 import React from 'react'
+import './styles.css'
 
 export default function Button({ value, onButtonClick, type, selected }) {
   const handleOnButtonClick = () => {
@@ -24,14 +25,14 @@ export default function Button({ value, onButtonClick, type, selected }) {
 const styles = {
   month: {
     backgroundColor: 'red',
-    margin: '10px',
+    margin: '5px',
   },
   year: {
     backgroundColor: 'blue',
-    margin: '10px',
+    margin: '5px',
   },
   selected: {
     backgroundColor: 'black',
-    margin: '10px',
+    margin: '5px',
   },
 }

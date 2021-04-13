@@ -5,23 +5,23 @@ import Tasks from './components/Tasks'
 
 export default function App() {
   const [allTasks, setAllTasks] = useState([])
-  const [filteredTasks, setFilteredTasks] = useState([])
   const [allYears, setAllYears] = useState([])
   const [allMonths, setAllMonths] = useState([])
   const [selectedMonth, setSelectedMonth] = useState(null)
   const [selectedYear, setSelectedYear] = useState(null)
+  const [filteredTasks, setFilteredTasks] = useState([])
 
   useEffect(() => {
     const getAllActivities = async () => {
       const data = await api.getAllActivities()
       setAllTasks(Object.assign([], data.data))
 
-      let sortedArray = Object.assign([], data.data)
-      sortedArray = sortedArray.sort((a, b) => a.day - b.day)
-      sortedArray = sortedArray.sort((a, b) => a.month - b.month)
-      sortedArray = sortedArray.sort((a, b) => a.year - b.year)
+      // let sortedArray = Object.assign([], data.data)
+      // sortedArray = sortedArray.sort((a, b) => a.day - b.day)
+      // sortedArray = sortedArray.sort((a, b) => a.month - b.month)
+      // sortedArray = sortedArray.sort((a, b) => a.year - b.year)
 
-      setFilteredTasks(sortedArray)
+      //setFilteredTasks(sortedArray)
     }
     getAllActivities()
   }, [])
@@ -75,16 +75,38 @@ export default function App() {
     }
   }
 
+  const handleTaskClicked = async (data) => {
+    console.log(data)
+    const newFilteredTasks = filteredTasks.map((task) => {
+      const { id, day, month, year, period, date, description, done } = task
+      if (data.id === id) {
+        const newTask = {
+          id,
+          day,
+          month,
+          year,
+          period,
+          date,
+          description,
+          done: !done,
+        }
+
+        const updateTask = async () => {
+          api.updateTask(id, newTask)
+        }
+        updateTask()
+
+        return newTask
+      }
+
+      return task
+    })
+    setFilteredTasks(newFilteredTasks)
+  }
+
   return (
     <div className='container'>
       <h3 className='center'>React Todos</h3>
-      <br />
-      Total: {filteredTasks.length}
-      <br />
-      Done: {filteredTasks.filter((task) => task.done === true).length}
-      <br />
-      To do: {filteredTasks.filter((task) => task.done !== true).length}
-      <br />
       <ButtonContainer
         values={allYears}
         selected={selectedYear}
@@ -98,9 +120,46 @@ export default function App() {
         onButtonClick={handleOnButtonClick}
       />
       <hr />
-      <Tasks tasks={filteredTasks} />
+      <div className='container center'>
+        <span style={styles.titles}>Total: </span>
+        <span style={styles.total}> {filteredTasks.length}</span>
+        <span style={styles.titles}>Done: </span>
+        <span style={styles.done}>
+          {filteredTasks.filter((task) => task.done === true).length}
+        </span>
+        <span style={styles.titles}>To do: </span>
+        <span style={styles.todo}>
+          {filteredTasks.filter((task) => task.done !== true).length}
+        </span>
+      </div>
+      <Tasks tasks={filteredTasks} taskWasClicked={handleTaskClicked} />
     </div>
   )
+}
+
+const styles = {
+  titles: {
+    fontWeight: 'bold',
+    fontSize: '1.2rem',
+  },
+  total: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: '1.2rem',
+    marginRight: '30px',
+  },
+  done: {
+    color: 'green',
+    fontWeight: 'bold',
+    fontSize: '1.2rem',
+    marginRight: '30px',
+  },
+  todo: {
+    color: 'red',
+    fontWeight: 'bold',
+    fontSize: '1.2rem',
+    marginRight: '30px',
+  },
 }
 
 const objMonths = [

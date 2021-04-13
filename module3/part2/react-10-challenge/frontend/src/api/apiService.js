@@ -7,4 +7,8 @@ const getAllActivities = async () => {
   return data
 }
 
-export { getAllActivities }
+const updateTask = async (id, data) => {
+  await axios.put(`${API_URL}/${id}`, data)
+}
+
+export { getAllActivities, updateTask }

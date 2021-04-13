@@ -1,12 +1,24 @@
 import React from 'react'
 
-export default function Task({ task }) {
-  console.log(task)
+export default function Task({ task, onTaskClick }) {
+  let cssColor = task.done
+    ? '#a5d6a7 green lighten-3'
+    : '#ffb74d orange lighten-2'
 
-  const cssColor = task.done ? 'card green' : 'card orange'
+  const handleTaskClick = () => {
+    onTaskClick(task)
+  }
 
   return (
-    <div className={cssColor} style={{ padding: '10px', margin: '15px' }}>
+    <div
+      className={cssColor}
+      style={{
+        padding: '15px',
+        margin: '20px',
+        cursor: 'pointer',
+      }}
+      onClick={handleTaskClick}
+    >
       <span style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
         {task.date.split('-').reverse().join('/')}
       </span>
@@ -14,8 +26,4 @@ export default function Task({ task }) {
       {task.description}
     </div>
   )
-}
-
-const styles = {
-  done: {},
 }
