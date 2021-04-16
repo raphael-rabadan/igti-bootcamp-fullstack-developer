@@ -31,3 +31,12 @@ insert returns the quantity of elements affected
 
 ## RETRIEVE - SELECT
 
+db.student.find({},{})
+db.student.find(query, projection) # query = which documents # projection = which columns
+db.student.find({},{_id:0, name:1, value:1})
+db.student.find({},{_id:0})
+db.student.find({},{_id:0, name:1, value:1}).limit(4)
+db.student.find({},{_id:0, name:1, value:1}).limit(4).skip(1)
+db.student.find({},{_id:0, name:1, value:1}).sort({name:1})
+db.student.find({},{_id:0, name:1, value:1}).sort({name:-1})
+db.student.find({},{_id:0, name:1, value:1}).sort({name:1}).limit(1)
