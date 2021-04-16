@@ -1,0 +1,13 @@
+mongo --version 
+mongod --version
+mongod --dbpath="place to put the data"
+mongo --host localhost:27017 ##connects the db
+show dbs ##show de databases
+db ##show the actual database
+use [name_of_db] ##switch to the db. Only creates the db after the 1st insert
+db.dropDatabase() ## drops the actual db
+db.help() ## show help commands 
+db.createCollection("collection name") ## db.createCollection("collection name", {}) - with params
+show collections
+db.(collection).drop() #drops collection
+db.createCollection('log', {capped: true, size:1024, max: 10}) ## circular, size of 1024, max of  10 docs
