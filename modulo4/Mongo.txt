@@ -11,3 +11,23 @@ db.createCollection("collection name") ## db.createCollection("collection name",
 show collections
 db.(collection).drop() #drops collection
 db.createCollection('log', {capped: true, size:1024, max: 10}) ## circular, size of 1024, max of  10 docs
+
+## INSERT
+
+db.COLLECTION.insertOne({}) 
+db.student.insertOne({name: "Maria dos Anjos"}) 
+db.student.insertMany([
+ {name: "Marco Antônio", subject:"Matemática", type: "Trabalho Prático", value:15.4}
+,{name: "Ana Maria Silva", subject:"Português", type: "Prova Final", value:23.8}])
+
+db.student.insert({name: "Pedro", subject:"História"})
+db.student.insert([
+  {name: "Pedro Augusto", subject:"História", type:"Trabalho Prático", value:17.5},
+  {name: "Clauida Romualdo", subject:"Química", type:"Prova Final", value:28.5}
+])
+
+insertOne and insertMany returns the objectid ## this one is more used
+insert returns the quantity of elements affected
+
+## RETRIEVE - SELECT
+
