@@ -1,0 +1,51 @@
+Trabalho Prático - roteiro
+==========================
+
+  (x) Montar projeto a partir do projeto-base com Tailwind
+  (x) Explicar o projeto-base de forma resumida
+
+  (x) Criar arquivo .env e incluir configuração para que 
+     o app abra no Chrome como incognito:
+
+     BROWSER=chrome
+     BROWSER_ARGS=--incognito
+
+  (x) Criar componente pages/TransformationPage. Utilizá-lo em  
+      App.js
+
+  (x) Em TransformationPage, fazer com que todos os elementos herdem 
+     a fonte monoespaçada. Criar componentes Header e Main.
+
+  (x) Em TransformationPage, montar construtor. 
+     Criar this.state com objeto e item com userInput = 'Trabalho Prático'    
+  
+  (x) Em render, implementar input de digitação do usuário.
+  (x) Implementar primeiro item com input (Texto invertido)
+  (x) Identificar repetições e propor melhoria com o componente <Input>
+
+  () Criar componente <Input /> 
+     (x) Criar as props autoFocus, readOnly, allowCopy, 
+        description, value, id, onChange e className      
+
+     (x) render 
+        (x) Montar input conforme layout
+        (x) Montar botão para copiar os dados conforme valor da prop 
+           allowCopy
+        (x) Para obter o ícone: https://react-icons.github.io/react-icons/
+        (x) Implementar handleInputChange 
+        (x) Implementar handleCopy
+        (x) Referência para cópia: 
+           https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+        (x) Alertar que a prop "disabled" do input "quebra" a cópia
+
+  (x) Substituir os inputs da página pelo componente <Input /> com 
+     as devidas configurações de props
+
+  (x) Criar mais um input para "abc"
+  (x) Verificar duplicidade de código e propor uma solução com arrays.    
+  (x) Criar array MY_TRANSFORMATIONS e implementar itens com id, 
+     description e transformFunction  
+  (x) Implementar stringHelpers com funções auxiliares
+  () Implementar demais transformações 
+  () Implementar uma nova transformação, com sugestão dos alunos 
+  () Perceber e entender o "faça o computador trabalhar para você"     

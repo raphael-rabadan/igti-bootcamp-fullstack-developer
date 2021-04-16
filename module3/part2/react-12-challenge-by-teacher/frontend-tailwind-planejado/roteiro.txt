@@ -1,0 +1,35 @@
+Desafio - Módulo 3 - React
+==========================
+
+() Subir backend
+() Repassar projeto-base rapidamente
+() Renomear projeto em index.html
+() Criar pages/TodosPage e utilizar em App.js
+() Componentizar Header e Main
+() Criar api para anos e meses (hardcoded), padronizando { id, description }
+
+() Criar componente <Select /> para exibição dos anos e meses
+   Referência: https://reactjs.org/docs/forms.html#the-select-tag
+
+() Criar state para currentYear e currentMonth, preenchendo com 
+   ano e mês atuais de forma equivalente ao {id} da API.
+
+() Preencher anos e meses com useState + api. Mostrar 
+   exemplo de performance com utilizando "for" iterando 2 bilhões de vezes e 
+   comparar inicialização de "useState" com valor x função
+
+() Mostrar estado do app com o React Developer Tools
+
+() Implementar filtro de todo's na API
+   Url de referência: http://localhost:3001/todos?year=2020&month=1
+
+() Implementar componente Loading
+() Implementar componente Summary
+
+() Implementar componentes Todos e Todo passando "onToggle" em 2 níveis
+   () Demonstrar "prop drilling"
+
+() Refatorar utilizando o conceito de composition, evitando 
+   o prop drilling
+
+() Implementar onToggle com integração à API para atualizar a todo 
