@@ -40,3 +40,91 @@ db.student.find({},{_id:0, name:1, value:1}).limit(4).skip(1)
 db.student.find({},{_id:0, name:1, value:1}).sort({name:1})
 db.student.find({},{_id:0, name:1, value:1}).sort({name:-1})
 db.student.find({},{_id:0, name:1, value:1}).sort({name:1}).limit(1)
+db.student.find({},{_id:0, name:1, value:1}).sort({name:1}).limit(1).pretty()
+
+db.student.replaceOne({_id: ObjectId("60799a5c614df1419fc3399c")}, {name:'Raphael Rabadan'})
+
+## DELETE
+
+db.COLLECTION.deletetOne({}) 
+db.COLLECTION.deleteMany({}) 
+
+db.student.deleteOne({_id: ObjectId("60799a5c614df1419fc3399c")})
+db.student.deleteMany({subject: 'História'})
+
+#bulkWrite
+
+db.COLLECTION.bulkWrite([op1, op2, op3, ...], options)
+db.student.bulkWrite([
+  {
+    insertOne: {
+      "document": {
+        name: 'Thiago Peixoto', 
+        subject: 'Física',
+        type: "Prova Final", 
+        value: 16,
+        timestamp: new Date()
+      }
+    }
+  },
+  {
+    insertOne: {
+      "document": {
+        name: 'Patrícia Rafaela', 
+        subject: 'Português',
+        type: "Tralho Prático", 
+        value: 21.3,
+        timestamp: new Date()
+      }
+    }
+  },
+  {
+    updateOne: {
+      "filter": {name: "Marco Antônio"},
+      "update": {$set: {subject: "História"}}
+    }
+  },
+  {
+    deleteOne: {
+      "filter": {name: 'Pedro Augusto',
+                type: "Trabalho Prático",
+                subject: 'História'},
+    }
+  },
+  {
+    replaceOne: {
+      "filter": {_id: ObjectId("60799c60614df1419fc339a1")},
+      "replacement": {name: "Tais Bernardes", subject: "Física", type: "Trabalho Prático", value: 12, lastModified: new Date()}
+    }
+  }
+], {ordered: false}) ## comandos em paralelo se ordered = false
+
+db.student.bulkWrite([
+  {
+    updateOne: {
+      "filter": {_id: ObjectId("60799b7c614df1419fc3399d") },
+      "update": {$set: {subject: "Historia"}}
+    }
+  }
+
+], {ordered: false}) ## comandos em paralelo se ordered = false
+
+db.student.bulkWrite([
+  db.student.insertOne
+  db.student.insertMany
+  db.student.updateOne
+  db.student.updateMany
+  db.student.deleteOne
+  db.student.deleteMany
+  db.student.replateOne
+  
+
+])
+
+# indexes
+
+db.COLLECTION.getIndexes()
+db.student.getIndexes()
+
+db.collection.dropIndexes("*")
+db.student.dropIndexes("*")
