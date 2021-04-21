@@ -6,6 +6,7 @@ import {
   doTransfer,
   getAverage,
   getPoorestClients,
+  getRichestClients,
 } from './../controller/account.js'
 
 export const handlerGetAccounts = async (req, res) => {
@@ -108,6 +109,17 @@ export const handlerGetPoorestClients = async (req, res, next) => {
     const accounts = await getPoorestClients(parseInt(size))
     res.send(accounts)
     logger.info(`GET /account/poorest/:size ${JSON.stringify(accounts)}`)
+  } catch (err) {
+    next(err)
+  }
+}
+
+export const handlerGetRichestClients = async (req, res, next) => {
+  try {
+    const size = req.params.size
+    const accounts = await getRichestClients(parseInt(size))
+    res.send(accounts)
+    logger.info(`GET /account/richest/:size ${JSON.stringify(accounts)}`)
   } catch (err) {
     next(err)
   }

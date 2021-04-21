@@ -52,11 +52,16 @@ export const getAverageBalanceFromAgency = async (agency) => {
 }
 
 export const getPoorestClients = async (size) => {
-  console.log(size)
-  const poorestAccounts = await accountModel
+  return await getAccountsSortedByBalance(size, 1)
+}
+
+export const getRichestClients = async (size) => {
+  return await getAccountsSortedByBalance(size, -1)
+}
+
+const getAccountsSortedByBalance = async (size = 5, order = -1) => {
+  return await accountModel
     .find({}, { _id: 0 })
     .limit(size)
-    .sort({ balance: -1 })
-  console.log(poorestAccounts)
-  return poorestAccounts
+    .sort({ balance: order })
 }

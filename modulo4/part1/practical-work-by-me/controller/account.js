@@ -6,6 +6,7 @@ import {
   deleteAccount as repoDeleteAccount,
   getAverageBalanceFromAgency as repoGetAverageBalanceFromAgency,
   getPoorestClients as repoGetPoorestClients,
+  getRichestClients as repoGetRichestClients,
 } from './../repository/account.js'
 
 const NO_TAX = 0
@@ -70,7 +71,11 @@ export const getPoorestClients = async (size) => {
   return accounts
 }
 
-getPoorestClients
+export const getRichestClients = async (size) => {
+  validation.validateNumberField(size, 'Tamanho')
+  const accounts = await repoGetRichestClients(size)
+  return accounts
+}
 
 const updateBalance = async (account, type, tax = 0) => {
   const { valor } = account
