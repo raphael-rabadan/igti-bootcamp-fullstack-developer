@@ -5,6 +5,7 @@ import {
   getBalance,
   doTransfer,
   getAverage,
+  getPoorestClients,
 } from './../controller/account.js'
 
 export const handlerGetAccounts = async (req, res) => {
@@ -91,9 +92,22 @@ export const handlerTransfer = async (req, res, next) => {
 export const handlerGetAverage = async (req, res, next) => {
   try {
     const agency = req.params.agency
-    const average = await getAverage(agency)
+    const average = await getAverage(parseInt(agency))
     res.send(average.toString())
-    logger.info(`GET /account/average - average ${average} of agency ${agency}`)
+    logger.info(
+      `GET /account/average/:agency - average ${average} of agency ${agency}`
+    )
+  } catch (err) {
+    next(err)
+  }
+}
+
+export const handlerGetPoorestClients = async (req, res, next) => {
+  try {
+    const size = req.params.size
+    const accounts = await getPoorestClients(parseInt(size))
+    res.send(accounts)
+    logger.info(`GET /account/poorest/:size ${JSON.stringify(accounts)}`)
   } catch (err) {
     next(err)
   }

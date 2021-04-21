@@ -5,6 +5,7 @@ import {
   searchAccountsFromAgency as repoSearchAccountsFromAgency,
   deleteAccount as repoDeleteAccount,
   getAverageBalanceFromAgency as repoGetAverageBalanceFromAgency,
+  getPoorestClients as repoGetPoorestClients,
 } from './../repository/account.js'
 
 const NO_TAX = 0
@@ -58,13 +59,21 @@ export const doTransfer = async (sourceAccount, destinationAccount, value) => {
 }
 
 export const getAverage = async (agency) => {
-  validation.validateNumberField(parseInt(agency), 'Agência')
+  validation.validateNumberField(agency, 'Agência')
   const average = await repoGetAverageBalanceFromAgency(agency)
   return average
 }
 
+export const getPoorestClients = async (size) => {
+  validation.validateNumberField(size, 'Tamanho')
+  const accounts = await repoGetPoorestClients(size)
+  return accounts
+}
+
+getPoorestClients
+
 const updateBalance = async (account, type, tax = 0) => {
-  const { agencia, conta, valor } = account
+  const { valor } = account
 
   validateAccountWithValue(account)
 

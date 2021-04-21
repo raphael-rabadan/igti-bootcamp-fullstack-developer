@@ -4,7 +4,7 @@ export const updateBalance = async (account) => {
   const { agencia, conta, valor } = account
   account = await accountModel.findOneAndUpdate(
     { agencia, conta },
-    { $inc: { balance: parseInt(valor) } },
+    { $inc: { balance: valor } },
     { new: true }
   )
 
@@ -33,7 +33,6 @@ export const searchAccountsFromAgency = async (account) => {
 }
 
 export const getAverageBalanceFromAgency = async (agency) => {
-  agency = parseInt(agency)
   const searchedAccount = await accountModel.aggregate([
     {
       $match: {
@@ -50,4 +49,14 @@ export const getAverageBalanceFromAgency = async (agency) => {
     },
   ])
   return searchedAccount[0].average
+}
+
+export const getPoorestClients = async (size) => {
+  console.log(size)
+  const poorestAccounts = await accountModel
+    .find({}, { _id: 0 })
+    .limit(size)
+    .sort({ balance: -1 })
+  console.log(poorestAccounts)
+  return poorestAccounts
 }
