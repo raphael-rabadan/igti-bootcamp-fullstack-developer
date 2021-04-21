@@ -4,6 +4,7 @@ import {
   doWithdraw,
   getBalance,
   doTransfer,
+  getAverage,
 } from './../controller/account.js'
 
 export const handlerGetAccounts = async (req, res) => {
@@ -82,6 +83,17 @@ export const handlerTransfer = async (req, res, next) => {
         data
       )}`
     )
+  } catch (err) {
+    next(err)
+  }
+}
+
+export const handlerGetAverage = async (req, res, next) => {
+  try {
+    const agency = req.params.agency
+    const average = await getAverage(agency)
+    res.send(average.toString())
+    logger.info(`GET /account/average - average ${average} of agency ${agency}`)
   } catch (err) {
     next(err)
   }

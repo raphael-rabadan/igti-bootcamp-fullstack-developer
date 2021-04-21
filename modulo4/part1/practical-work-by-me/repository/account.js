@@ -31,3 +31,23 @@ export const searchAccountsFromAgency = async (account) => {
   const searchedAccount = await accountModel.find({ agencia })
   return searchedAccount
 }
+
+export const getAverageBalanceFromAgency = async (agency) => {
+  agency = parseInt(agency)
+  const searchedAccount = await accountModel.aggregate([
+    {
+      $match: {
+        agencia: agency,
+      },
+    },
+    {
+      $group: {
+        _id: '$agencia',
+        average: {
+          $avg: '$balance',
+        },
+      },
+    },
+  ])
+  return searchedAccount[0].average
+}

@@ -4,6 +4,7 @@ import {
   searchAccount as repoSearchAccount,
   searchAccountsFromAgency as repoSearchAccountsFromAgency,
   deleteAccount as repoDeleteAccount,
+  getAverageBalanceFromAgency as repoGetAverageBalanceFromAgency,
 } from './../repository/account.js'
 
 const NO_TAX = 0
@@ -32,6 +33,7 @@ export const deleteAccount = async (account) => {
   await repoDeleteAccount(account)
   return (await repoSearchAccountsFromAgency(account)).length
 }
+
 export const doTransfer = async (sourceAccount, destinationAccount, value) => {
   validation.validateNumberField(sourceAccount.agencia, 'Agência de Origem')
   validation.validateNumberField(sourceAccount.conta, 'Conta de Origem')
@@ -53,6 +55,12 @@ export const doTransfer = async (sourceAccount, destinationAccount, value) => {
   await doDeposit(destinationAccount)
 
   return balanceSourceAccount.balance
+}
+
+export const getAverage = async (agency) => {
+  validation.validateNumberField(parseInt(agency), 'Agência')
+  const average = await repoGetAverageBalanceFromAgency(agency)
+  return average
 }
 
 const updateBalance = async (account, type, tax = 0) => {
