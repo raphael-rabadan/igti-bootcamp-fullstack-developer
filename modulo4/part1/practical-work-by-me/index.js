@@ -4,6 +4,7 @@ import cors from 'cors'
 import logger from './helper/logger.js'
 
 import accountRouter from './routes/account.js'
+import { handlerStatic } from './handler/static.js'
 
 const app = express()
 
@@ -26,7 +27,7 @@ try {
 
 app.use(express.json())
 app.use(cors())
-app.use(express.static('public'))
+app.use(handlerStatic, express.static('public'))
 app.use('/account', accountRouter)
 
 app.use((err, req, res, next) => {
