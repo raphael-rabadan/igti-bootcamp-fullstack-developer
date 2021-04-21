@@ -3,6 +3,7 @@ import {
   doDeposit,
   doWithdraw,
   getBalance,
+  doTransfer,
 } from './../controller/account.js'
 
 export const handlerGetAccounts = async (req, res) => {
@@ -63,13 +64,24 @@ export const handlerDelete = async (req, res, next) => {
 
 export const handlerTransfer = async (req, res, next) => {
   try {
-    const accounts = req.body
-    const sourceAccount = accounts.contaOrigem
-    const destinationAccount = accounts.contaDestino
+    const data = req.body
+    const sourceAccount = data.contaOrigem
+    const destinationAccount = data.contaDestino
+    const value = data.valor
 
-    //const quantityOfAccountFromAgency = await transfer(account)
-    res.send('handlerTransfer')
-    logger.info(`PATCH /transfer - ${JSON.stringify(accounts)}`)
+    const balanceSourceAccount = await doTransfer(
+      sourceAccount,
+      destinationAccount,
+      value
+    )
+
+    res.send(balanceSourceAccount.toString())
+
+    logger.info(
+      `PATCH /transfer - balance of source account after transfer ${balanceSourceAccount} - initial data of the transfer: ${JSON.stringify(
+        data
+      )}`
+    )
   } catch (err) {
     next(err)
   }
