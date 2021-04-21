@@ -108,7 +108,9 @@ export const handlerGetPoorestClients = async (req, res, next) => {
     const size = req.params.size
     const accounts = await getPoorestClients(parseInt(size))
     res.send(accounts)
-    logger.info(`GET /account/poorest/:size ${JSON.stringify(accounts)}`)
+    logger.info(
+      `GET /account/poorest/:size  - size ${size} -${JSON.stringify(accounts)}`
+    )
   } catch (err) {
     next(err)
   }
@@ -119,7 +121,9 @@ export const handlerGetRichestClients = async (req, res, next) => {
     const size = req.params.size
     const accounts = await getRichestClients(parseInt(size))
     res.send(accounts)
-    logger.info(`GET /account/richest/:size ${JSON.stringify(accounts)}`)
+    logger.info(
+      `GET /account/richest/:size - size ${size} - ${JSON.stringify(accounts)}`
+    )
   } catch (err) {
     next(err)
   }
