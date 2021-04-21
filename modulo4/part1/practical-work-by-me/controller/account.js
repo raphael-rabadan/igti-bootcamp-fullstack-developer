@@ -52,7 +52,7 @@ export const doTransfer = async (sourceAccount, destinationAccount, value) => {
   const balanceSourceAccount = await doWithdraw(sourceAccount, tax)
   await doDeposit(destinationAccount)
 
-  return balanceSourceAccount
+  return balanceSourceAccount.balance
 }
 
 const updateBalance = async (account, type, tax = 0) => {

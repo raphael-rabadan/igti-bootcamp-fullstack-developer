@@ -27,7 +27,8 @@ try {
 
 app.use(express.json())
 app.use(cors())
-app.use(handlerStatic, express.static('public'))
+//app.use(handlerStatic, express.static('public'))
+app.use(express.static('public'))
 app.use('/account', accountRouter)
 
 app.use((err, req, res, next) => {
