@@ -15,7 +15,7 @@ export const updateBalance = async (account) => {
 export const searchAccount = async (account) => {
   const { agencia, conta } = account
 
-  const searchedAccount = await accountModel.find({ agencia, conta })
+  const searchedAccount = await accountModel.findOne({ agencia, conta })
 
   return searchedAccount
 }
