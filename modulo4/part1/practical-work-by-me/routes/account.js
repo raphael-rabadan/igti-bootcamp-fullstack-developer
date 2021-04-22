@@ -9,6 +9,7 @@ import {
   handlerGetAverage,
   handlerGetPoorestClients,
   handlerGetRichestClients,
+  handlerPromoteRichests,
 } from './../handler/account.js'
 
 const accountRouter = express.Router()
@@ -22,5 +23,6 @@ accountRouter.patch('/transfer', handlerTransfer)
 accountRouter.get('/average/:agency', handlerGetAverage)
 accountRouter.get('/poorest/:size', handlerGetPoorestClients)
 accountRouter.get('/richest/:size', handlerGetRichestClients)
+accountRouter.patch('/promote-richests', handlerPromoteRichests)
 
 export default accountRouter

@@ -7,9 +7,10 @@ import {
   getAverage,
   getPoorestClients,
   getRichestClients,
+  promoteRichests,
 } from './../controller/account.js'
 
-export const handlerGetAccounts = async (req, res) => {
+export const handlerGetAccounts = async (_req, res) => {
   try {
     res.send('list all the accounts')
   } catch (err) {
@@ -124,6 +125,16 @@ export const handlerGetRichestClients = async (req, res, next) => {
     logger.info(
       `GET /account/richest/:size - size ${size} - ${JSON.stringify(accounts)}`
     )
+  } catch (err) {
+    next(err)
+  }
+}
+
+export const handlerPromoteRichests = async (_req, res, next) => {
+  try {
+    const accounts = await promoteRichests()
+    res.send(accounts)
+    logger.info(`GET /account/promote-richests - ${JSON.stringify(accounts)}`)
   } catch (err) {
     next(err)
   }

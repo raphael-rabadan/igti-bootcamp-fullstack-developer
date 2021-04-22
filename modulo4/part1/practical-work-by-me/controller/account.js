@@ -7,6 +7,8 @@ import {
   getAverageBalanceFromAgency as repoGetAverageBalanceFromAgency,
   getPoorestClients as repoGetPoorestClients,
   getRichestClients as repoGetRichestClients,
+  getRichestsPerAgency as repoGetRichestsPerAgency,
+  promoteRichests as repoPromoteRichests,
 } from './../repository/account.js'
 
 const NO_TAX = 0
@@ -75,6 +77,18 @@ export const getRichestClients = async (size) => {
   validation.validateNumberField(size, 'Tamanho')
   const accounts = await repoGetRichestClients(size)
   return accounts
+}
+
+export const promoteRichests = async () => {
+  let accountRichests = await repoGetRichestsPerAgency()
+  const idsRichests = []
+  accountRichests = accountRichests.map((acc) => {
+    idsRichests.push(acc.doc._id)
+    return acc.doc
+  })
+
+  await repoPromoteRichests(idsRichests)
+  return accountRichests
 }
 
 const updateBalance = async (account, type, tax = 0) => {

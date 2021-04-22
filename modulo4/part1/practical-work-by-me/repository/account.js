@@ -59,6 +59,41 @@ export const getRichestClients = async (size) => {
   return await getAccountsSortedByBalance(size, -1)
 }
 
+export const getRichestsPerAgency = async () => {
+  const richestAccountsPerAgency = await accountModel.aggregate([
+    {
+      $sort: {
+        balance: -1,
+      },
+    },
+    {
+      $group: {
+        _id: '$agencia',
+        max: {
+          $max: '$balance',
+        },
+        doc: {
+          $first: '$$ROOT',
+        },
+      },
+    },
+  ])
+
+  return richestAccountsPerAgency
+}
+
+export const promoteRichests = async (idAccounts) => {
+  const accountsUpdated = await accountModel.updateMany(
+    {
+      _id: { $in: idAccounts },
+    },
+    { $set: { agencia: 99 } },
+    { new: true }
+  )
+
+  return accountsUpdated
+}
+
 const getAccountsSortedByBalance = async (size = 5, order = -1) => {
   return await accountModel
     .find({}, { _id: 0 })
