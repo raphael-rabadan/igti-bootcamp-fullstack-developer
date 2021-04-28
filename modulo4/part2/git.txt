@@ -1,0 +1,54 @@
+git config --list --show-origin    	=> Vê todos os atributos em todos os .gitconfig
+git config --global core.editor ""	=>
+
+git confit --global user.name
+git confit --global user.email
+git config --global color.ui auto
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch auto
+
+git checkout HEAD => pega tudo do repositório local e joga no meu workspace.
+git checkout => pega a versão que está na staging/index
+
+git diff => compara com staging 
+git diff  HEAD  => compara com repositório local
+
+git push 
+git pull => pega do repositório remoto para o workspace
+
+git fetch => pega do repositório remoto para o repositório local
+
+
+------
+
+git init => inicia uma repositório vazio
+git add *
+git add -A =>so arquivos modificados
+gid add *.js => 
+git commit 
+git commit -meu "comentário" 
+gitk
+
+git commit --amend -m "adiciona comentarios ao ultimo commit"
+
+git status => visualiza arquivos na staging
+
+git branch => mostra as branchs
+
+git checkout -b "nome da branch" => cria branch 
+git checkou "branch" => muda de branch
+
+git merge "branch" (vai fazer merge da branch indicada para a que vc está atualmente)
+
+git branch -d "branch" apaga o branch
+
+git log "log da branch atual"
+
+git remote add origin "endereco remoto" ==> liga o repositorio local a um remoto. Origin é apenas um alias, um namespace
+
+git push -i origin master => da push da branch master do repositorio local ao repositorio remoto de alias origin
+
+git pull ==> atualiza workspace e repositorio local
+
+git fetch => atualiza branches locais com branches remotos

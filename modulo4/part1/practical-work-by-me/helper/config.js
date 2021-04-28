@@ -23,6 +23,7 @@ const connectToDatabase = async () => {
   }
 
   try {
+    console.log(uri)
     await mongoose.connect(uri, paramsDb)
     logger.info(
       `Connected to MongoDB server [${server}] db [${mongoose.connection.db.databaseName}]`
