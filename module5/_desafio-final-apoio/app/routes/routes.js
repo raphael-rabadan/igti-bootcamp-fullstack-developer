@@ -8,6 +8,6 @@ transactionRouter.get('/byCompetence/:yearMonth', controller.findByCompetence)
 transactionRouter.get('/:id', controller.findOne)
 transactionRouter.put('/:id', controller.update)
 transactionRouter.delete('/:id', controller.remove)
-transactionRouter.delete('/', controller.removeAll)
+//transactionRouter.delete('/', controller.removeAll)
 
 module.exports = transactionRouter
