@@ -22,5 +22,8 @@
     "ignore": [
       "client/"
     ]
+  },
+  "engines": {
+    "node": "14.16.1"
   }
 }
